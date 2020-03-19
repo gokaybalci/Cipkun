@@ -17,9 +17,9 @@ loop = True
 
 while loop:          ## Boolean değerimiz false olana kadar devam edecek.
     print_menu()
-    choice = input("Enter your choice [1-4]: ")
+    choice = str(input("Enter your choice [1-4]: "))
      
-    if choice == 1:     
+    if choice == "1":     
         print("Creating a new diary entry:")
         diary = open("gunluk-" + today + ".md","w+")
         loop=False
@@ -28,7 +28,7 @@ while loop:          ## Boolean değerimiz false olana kadar devam edecek.
         print("Diary with the date " + today + " has been written into the folder.")
         loop=True
     
-    elif choice == 2:
+    elif choice == "2":
         print("Appending an existing entry:")
         diary = open("gunluk-" + today + ".md","a")
         loop=False
@@ -36,10 +36,13 @@ while loop:          ## Boolean değerimiz false olana kadar devam edecek.
         diary.write(dl_added_text)
         print("Diary with the date " + today + " has been overwritten.")
 
-    elif choice == 3:
-    	print("You decided to read a diary entry.")
+    elif choice == "3":
+        print("You decided to read a diary entry. Here it is: ")
+        diary = open("gunluk-" + today + ".md","r")
+        loop=False
+        print(diary.read())
 
-    elif choice == 4:
+    elif choice == "4":
         print("You've decided to exit the program. Ba-bye.")
         loop=False # Boolean değerimizi false olarak değiştirecek.
     else:
