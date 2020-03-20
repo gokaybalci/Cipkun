@@ -6,7 +6,6 @@ today = str(date.today())
 
 ## Şifreleme bölümü (İsteğe göre şifreleme yöntemi değiştirilebilir)
 
-alf = {"a" = 1, "b" = 2, "c" = 3, "d" = 4}
 
 def print_menu():
     print(30 * "-" , "DIARY MENU" , 30 * "-")
