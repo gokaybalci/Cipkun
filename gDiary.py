@@ -1,10 +1,19 @@
+#!/usr/bin/python
+
 from datetime import date
+from datetime import datetime
 
 ## Tarihler şifreleme için gerekeceğinden önemli bir adım.
 today = str(date.today())
+today2 = (date.today())
+daynum = int(today2.strftime("%d"))
+
 
 
 ## Şifreleme bölümü (İsteğe göre şifreleme yöntemi değiştirilebilir)
+
+crList = []
+crDic = {"a": 1 + daynum,"b": 2 + daynum,"c": 3 + daynum,"ç": 4 + daynum,"d": 5 + daynum,"e": 6 + daynum,"f": 7 + daynum,"g": 8 + daynum,"ğ": 9 + daynum,"h": 10 + daynum,"i": 11 + daynum,"ı": 12 + daynum,"j": 13 + daynum,"k": 14 + daynum,"l": 15 + daynum,"m": 16 + daynum,"n": 17 + daynum,"o": 18 + daynum,"ö": 19 + daynum,"p": 20 + daynum, "r": 21 + daynum, "s": 22 + daynum, "ş": 23 + daynum, "t": 24 + daynum, "u": 25 + daynum, "ü": 26 + daynum, "v": 27 + daynum, "y": 28 + daynum, "z": 29 + daynum, ".": 30 + daynum, ",": 31 + daynum, " ": 0 + daynum} 
 
 
 def print_menu():
@@ -25,12 +34,11 @@ while loop:  ## Boolean değerimiz false olana kadar devam edecek.
      
     if choice == "1":     
         print("Creating a new diary entry:")
-        diary = open("gunluk-" + today + ".md","w+")
-        loop=False
+        diary = open("gunluk-" + today + ".md","w")
         d_text = input("")
         diary.write(d_text)
         print("Diary with the date " + today + " has been written into the folder.")
-        loop=True
+        loop=False
     
     elif choice == "2":
         print("Appending an existing entry:")
@@ -50,15 +58,23 @@ while loop:  ## Boolean değerimiz false olana kadar devam edecek.
         loop=False
     elif choice == "4":
         diary_ready = open("gunluk-" + today + ".md","r")
-        print(diary_ready)
-        encryption_q = str(input("Do you want to cipher this entry? (Y / n) :"))
-        if encryption_q == "Y"
-            with open("gunluk-" + today + ".md","r+") as f:
-                old = f.read()
-                f.seek(0)
-                f.write()
-        else
+        encryption_q = str(input("Do you want to cipher this entry? (Y/n): "))
+        if encryption_q == "y":
+            stb_ced_diary = open("gunluk-" + today + ".md","r+")
+            crp = str(stb_ced_diary.read())
+            crList = list(crp)
+            print(crList)
+
+            for x in crList:
+                crList[crList.index(x)] = crDic[x]
+            print(crList)
+            diary = open("gunluk-" + today + ".md","+w")
+            for number in crList:
+                diary.write(str(number))
+            print("Diary with the date " + today + " has been overwritten with encryption.")
+        else:
             print("You've chosen not to cipher this entry.")
+        loop=False
     elif choice == "5":
         print("You've decided to exit the program. Ba-bye.")
         loop=False # Boolean değerimizi false olarak değiştirecek.
