@@ -1,7 +1,6 @@
 <h1>gDiary</h1> 
 
 <ul>
-Personal collection of themes and scripts for <a href="https://www.i3wm.org">i3wm</a>.
 
 ![](scrot.png)
 </ul>
@@ -21,12 +20,12 @@ Personal collection of themes and scripts for <a href="https://www.i3wm.org">i3w
 <h2>How to use</h2>
 <ul>
 <li> Make sure you have Python 3
-<li> Use your termianl and clone this repo
-'git clone https://github.com/gokaybalci/gDiary.git'
+<li> Use your terminal and clone this repo
+`git clone https://github.com/gokaybalci/gDiary.git`
 <li> Get into the folder
-'cd gDiary'
+`cd gDiary`
 <li> Launch the program
-'./gDiary.py'
+`./gDiary.py`
 
 After opening the program, you will be welcomed with a menu containing different items.
 Menu is self-explanatory.
