@@ -1,6 +1,5 @@
 # gDiary
 
-
 ![](scrot.png)
 
 
@@ -12,6 +11,7 @@
 
 
 ## What you will need
+
 - Python 3
 
 
@@ -19,12 +19,13 @@
 
 - Make sure you have Python 3
 - Use your terminal and clone this repo
-- "git clone https://github.com/gokaybalci/gDiary.git"
+- `git clone https://github.com/gokaybalci/gDiary.git`
 - Get into the folder
-- "cd gDiary"
--Launch the program
-- "./gDiary.py"
+- `cd gDiary`
+- Launch the program
+- `./gDiary.py`
 
 After opening the program, you will be welcomed with a menu containing different items.
 Menu is self-explanatory.
+
 
