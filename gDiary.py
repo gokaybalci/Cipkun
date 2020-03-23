@@ -30,7 +30,7 @@ loop = True
 
 while loop:  ## Boolean değerimiz false olana kadar devam edecek.
     print_menu()
-    choice = str(input("Enter your choice [1-4]: "))
+    choice = str(input("Enter your choice [1-5]: "))
      
     if choice == "1":     
         print("Creating a new diary entry:")
@@ -70,7 +70,8 @@ while loop:  ## Boolean değerimiz false olana kadar devam edecek.
             print(crList)
             diary = open("gunluk-" + today + ".md","+w")
             for number in crList:
-                diary.write(str(number))
+                #diary.write(str(number)) ## Seperator write'la kullanılamadığı için şimdilik listeyi printle dosyaya yazacak.
+                print(str(crList), file=open("gunluk-" + today + ".md", "w"), sep=",")
             print("Diary with the date " + today + " has been overwritten with encryption.")
         else:
             print("You've chosen not to cipher this entry.")
