@@ -32,7 +32,7 @@ def print_menu():
 	print("1. Create a diary entry")
 	print("2. Append a diary entry")
 	print("3. Read a diary entry")
-	print("4. Add cryption to an entry")
+	print("4. Add encryption to an entry")
 	print("5. Exit")
 	print(67 * "-")
 
