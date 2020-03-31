@@ -2,7 +2,6 @@
 
 from datetime import date
 from datetime import datetime
-from art import *
 
 ## Tarihler şifreleme için gerekeceğinden önemli bir adım.
 today = str(date.today())
@@ -15,10 +14,21 @@ daynum = int(today2.strftime("%d"))
 crList = []
 crDic = {"a": 1 + daynum,"b": 2 + daynum,"c": 3 + daynum,"ç": 4 + daynum,"d": 5 + daynum,"e": 6 + daynum,"f": 7 + daynum,"g": 8 + daynum,"ğ": 9 + daynum,"h": 10 + daynum,"i": 11 + daynum,"ı": 12 + daynum,"j": 13 + daynum,"k": 14 + daynum,"l": 15 + daynum,"m": 16 + daynum,"n": 17 + daynum,"o": 18 + daynum,"ö": 19 + daynum,"p": 20 + daynum, "r": 21 + daynum, "s": 22 + daynum, "ş": 23 + daynum, "t": 24 + daynum, "u": 25 + daynum, "ü": 26 + daynum, "v": 27 + daynum, "y": 28 + daynum, "z": 29 + daynum, ".": 30 + daynum, ",": 31 + daynum, " ": 0 + daynum} 
 
+## Logo
+logo_ascii = """
+
+    _____                                                          
+ .-~     ~.  |``````.  |       .'.       |`````````, ``..     ..'' 
+:            |       | |     .''```.     |'''|'''''      ``.''     
+:     _____  |       | |   .'       `.   |    `.           |       
+ `-._____.'| |......'  | .'           `. |      `.         |       
+                                                                                                     
+"""
+print(logo_ascii)
 
 def print_menu():
-	tprint("gDiary","georgia11")
-	print(30 * "-" , "DIARY MENU" , 30 * "-")
+
+	print(30 * "-" , "MENU" , 30 * "-")
 	print("1. Create a diary entry")
 	print("2. Append a diary entry")
 	print("3. Read a diary entry")
