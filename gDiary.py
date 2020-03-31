@@ -2,12 +2,12 @@
 
 from datetime import date
 from datetime import datetime
+from art import *
 
 ## Tarihler şifreleme için gerekeceğinden önemli bir adım.
 today = str(date.today())
 today2 = (date.today())
 daynum = int(today2.strftime("%d"))
-
 
 
 ## Şifreleme bölümü (İsteğe göre şifreleme yöntemi değiştirilebilir)
@@ -17,13 +17,14 @@ crDic = {"a": 1 + daynum,"b": 2 + daynum,"c": 3 + daynum,"ç": 4 + daynum,"d": 5
 
 
 def print_menu():
-    print(30 * "-" , "DIARY MENU" , 30 * "-")
-    print("1. Create a diary entry")
-    print("2. Append a diary entry")
-    print("3. Read a diary entry")
-    print("4. Add cryption to an entry")
-    print("5. Exit")
-    print(67 * "-")
+	tprint("gDiary","georgia11")
+	print(30 * "-" , "DIARY MENU" , 30 * "-")
+	print("1. Create a diary entry")
+	print("2. Append a diary entry")
+	print("3. Read a diary entry")
+	print("4. Add cryption to an entry")
+	print("5. Exit")
+	print(67 * "-")
 
 loop = True
 
