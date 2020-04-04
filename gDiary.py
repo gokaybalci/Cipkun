@@ -48,16 +48,16 @@ while loop:  ## Boolean değerimiz false olana kadar loop devam edecek, menünü
         diary = open("gunluk-" + today + ".md","w") ## Günlük markdown formatında günün tarihiyle beraber kaydedilecek. Şifre çözümü için tarih gerektiğinden değiştirilmemesi önemli.
         d_text = input("")
         diary.write(d_text)
-        print("Diary with the date " + today + " has been written into the folder.")
-        loop=False
+        print("\nDiary with the date " + today + " has been written into the folder.")
+        input("Press enter to return back to the menu.")
     
     elif choice == "2":
         print("Appending an existing entry:")
         diary = open("gunluk-" + today + ".md","a")
-        loop=False
         dl_added_text = input("")
         diary.write(dl_added_text)
-        print("Diary with the date " + today + " has been overwritten.")
+        print("\nDiary with the date " + today + " has been overwritten. Returning to menu...")
+        input("Press enter to return back to the menu.")
 
     elif choice == "3":
         print("You decided to read a diary entry.")
@@ -65,28 +65,32 @@ while loop:  ## Boolean değerimiz false olana kadar loop devam edecek, menünü
             diary = open("gunluk-" + today + ".md","r")
             print(diary.read())
         except FileNotFoundError:
-            print("The file you are looking for is not here.")
-        loop=False
+            print("\nThe file you are looking for is not here.")
+            input("Press enter to return back to the menu.")
     elif choice == "4":
-        diary_ready = open("gunluk-" + today + ".md","r")
-        encryption_q = str(input("Do you want to cipher this entry? (Y/n): "))
-        if encryption_q == "y":
-            stb_ced_diary = open("gunluk-" + today + ".md","r+")
-            crp = str(stb_ced_diary.read())
-            crList = list(crp)
-            print(crList)
+        try:
+            diary_ready = open("gunluk-" + today + ".md","r")
+            encryption_q = str(input("Do you want to cipher this entry? (Y/n): "))
+            if encryption_q == "y":
+                stb_ced_diary = open("gunluk-" + today + ".md","r+")
+                crp = str(stb_ced_diary.read())
+                crList = list(crp)
+                print(crList)
 
-            for x in crList:
-                crList[crList.index(x)] = crDic[x]
-            print(crList)
-            diary = open("gunluk-" + today + ".md","+w")
-            for number in crList:
-                #diary.write(str(number)) ## Seperator write'la kullanılamadığı için şimdilik listeyi printle dosyaya yazacak.
-                print(str(crList), file=open("gunluk-" + today + ".md", "w"), sep=",")
-            print("Diary with the date " + today + " has been overwritten with encryption.")
-        else:
-            print("You've chosen not to cipher this entry.")
-        loop=False
+                for x in crList:
+                    crList[crList.index(x)] = crDic[x]
+                print(crList)
+                diary = open("gunluk-" + today + ".md","+w")
+                for number in crList:
+                    #diary.write(str(number)) ## Seperator write'la kullanılamadığı için şimdilik listeyi printle dosyaya yazacak.
+                    print(str(crList), file=open("gunluk-" + today + ".md", "w"), sep=",")
+                print("\nDiary with the date " + today + " has been overwritten with encryption.")
+                input("Press enter to return back to the menu.")
+            else:
+                print("You've chosen not to cipher this entry.")
+        except FileNotFoundError:
+            print("\nThe file you are looking for is not here.")
+            input("Press enter to return back to the menu.")
     elif choice == "5":
         print("You've decided to exit the program. Ba-bye.")
         loop=False # Boolean değerimizi false olarak değiştirecek.
